@@ -1,0 +1,55 @@
+/*
+Topic
+    installation
+    adding on environment variable  
+
+
+*/
+
+/*
+download and install mongodb community  (always choose msi file for windows)
+download and install mongodb compass (gui to interact with mongodb database)
+download and install mongodb shell  (shell to interact with mongodb database),responsible to support mongosh command
+download and install mongodb database tools (to import and export data from database)
+*/
+/* -
+add mongodb server bin folder to environment variable path  (so that we can use mongod command in any terminal path)
+    C:\Program Files\MongoDB\Server\7.0\bin
+    mongod command only 
+            works on  the folder where mongod.cfg exist   (cfg => configuration)
+            generally on C:\Program Files\MongoDB\Server\7.0\bin  path
+    To work mongod in any path of terminal 
+        search edit environment variable 
+        under advance >>edit environment variable>> under system variables(section)>>find path
+        select path and click edit 
+        add new and paste C:\Program Files\MongoDB\Server\7.0\bin
+        click ok (3 times) on different tab  (it is the common mistake)
+    check 
+        open cmd (any terminal)
+        type mongod --version
+        if it show version then mongod is working
+add mongodb tools bin folder to environment variable path (so that we can use mongodump,mongorestore command in any terminal path)
+    C:\Program Files\MongoDB\Tools\100\bin
+
+/*
+
+
+/*
+checking mongo community is working or not
+    open cmd (any terminal)
+    type mongod --version
+    if it show version then mongod is working
+
+checking mongodump is working or not
+    open cmd (any terminal)
+    type mongodump --version
+    if it show version then mongodump is working
+checking mongo shell is working or not
+    open cmd (any terminal)
+    type mongosh --version
+    if it show version then mongosh is working
+
+checking mongo compass is working or not
+    open mongo compass application
+    if it open then mongo compass is working
+*/
