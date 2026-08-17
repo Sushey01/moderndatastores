@@ -17,7 +17,7 @@ find({skills: ["html", "css"]})//exact match sequence also matter
 //db.students.find({name:"arjun"}).count()
 
 
-
+//db.students.findOne({name:"arjun"}) // findOne() method will return only one document even if there are multiple documents with the same name
 
 // data = document vanxa    
 // Array of object = embedded document vanxa 
@@ -77,4 +77,5 @@ db.students.insertMany([
   ]
 }
 ])
+
 
