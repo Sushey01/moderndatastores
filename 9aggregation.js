@@ -43,6 +43,75 @@ db.students.aggregate([
 ]);
 
 
+db.students.aggregate([
+  {
+    $match: {}
+  },
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      country: 1,
+      student_age: "$age",
+
+      total_score: {
+        $add: [
+          "$scores.math",
+          "$scores.english",
+          "$scores.science"
+        ]
+      },
+
+      average_score: {
+        $avg: [
+          "$scores.math",
+          "$scores.english",
+          "$scores.science"
+        ]
+      },
+
+      min_score: {
+        $min: [
+          "$scores.math",
+          "$scores.english",
+          "$scores.science"
+        ]
+      },
+
+      max_score: {
+        $max: [
+          "$scores.math",
+          "$scores.english",
+          "$scores.science"
+        ]
+      },
+
+      full_name: {
+        $concat: ["$name", " ", "$surname"]
+      },
+
+      percentage: {
+        $multiply: [
+          {
+            $divide: [
+              {
+                $add: [
+                  "$scores.math",
+                  "$scores.english",
+                  "$scores.science"
+                ]
+              },
+              300
+            ]
+          },
+          100
+        ]
+      }
+    }
+  }
+])
+
+
 
 
 
